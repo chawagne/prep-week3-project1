@@ -46,12 +46,22 @@ document.getElementById('divideByTwoButton').addEventListener("click",function (
 // 3. Define a function called "greeting".
 //    It should accept two parameters within input fields, which will both be first names.
 //    The function should display to the HTML page a greeting to both people.
-
+function greeting(name1, name2){
+  document.getElementById('q3').innerHTML="Hello " + name1 + " and " + name2;
+}
+document.getElementById('greet').addEventListener("click",function () {
+ greeting(document.getElementById("name1").value,document.getElementById("name2").value );
+});
 
 
 // 4. Create a function that finds the average of 6 numbers passed in when called
 //    and returns the value and is then displayed in the HTML page.
-
+function average(num1, num2, num3, num4, num5, num6){
+  var averaged = (num1 + num2 + num3 + num4 + num5 + num6)/6;
+  document.getElementById("q4").innerHTML=averaged;
+  return averaged;
+}
+average(1,2,3,4,5,6);
 
 
 
@@ -59,18 +69,28 @@ document.getElementById('divideByTwoButton').addEventListener("click",function (
 //    Write a function that takes the price per unit and calculates the total for you each month.
 //    Since the price of the cashews can change anytime, pass that amount into the function to get your total price.
 
-
-
+function order(price){
+  totalCost = 6 * price;
+  document.getElementById("q4").innerHTML=totalCost;
+}
+order(3);
 
 // 6. Define functions called "area" and "perimeter". They should both accept two parameters and calculate the area and perimeter of a rectangle.
-
+function area(length, width){
+  return length * width;
+}
+function perimeter(length, width){
+  return (length * 2)+(width * 2);
+}
 
 
 
 
 // 7. Define a function called "quarter". It accepts one parameter called "number".
 //    The function will return a value which is one quarter of the number provided.
-
+function quarter(number) {
+  return number/4;
+}
 
 
 
@@ -78,13 +98,23 @@ document.getElementById('divideByTwoButton').addEventListener("click",function (
 // 8. Write a function called "sleepings", it should accept one parameter, an integer called "hours".
 //    Write a conditional statement inside of the function. If the number of hours is more than 8, display a statement to the HTML page about getting enough rest.
 //    If the number of hours is less than 8, print a statement recommending the user get more shut eye.
-
+function sleepings(hours){
+  if(hours<8){
+    document.getElementById("q8").innerHTML="Get some shut-eye.";
+    }
+  else {
+    document.getElementById("q8").innerHTML="That's enough sleep.";
+  }
+}
 
 
 
 
 // 9. Develop a function that determines a person's age by asking them for their birth year.
-
+function age(birthYear){
+  //I have no idea how objects work :D
+  return (new Date().getFullYear()-birthYear);
+}
 
 
 
@@ -92,15 +122,30 @@ document.getElementById('divideByTwoButton').addEventListener("click",function (
 // 10. Write a function that accepts the following array and separates the people into two teams. Display each team within the HTML page.
 //    No names next to each other in the array should be on the same team.
      teammates = ["Harold", "Bob", "Sue", "Grady", "Notorious B.I.G.", "JavaCrypt", "Weird guy in the back", "Gary", "Carol", "Hipster Tim", "Janet"]
-
-
+function teams(people){
+  var team1="";
+  var team2="";
+for (var i = 0; i < people.length; i++) {
+  if (i%2 === 0) {
+    team1 += people[i] + " ";
+  }
+  else {
+    team2 += people[i] + " ";
+  }
+}
+document.getElementById("q10").innerHTML="Team 1: " + team1 + "<br />Team 2: " + team2;
+}
+teams(teammates);
 
 
 // 11. Allow a user to enter a three digit number.
 //     Write a function that adds the numbers together.
 //     Hint #1: You need to turn a string into an integer.
 //     Hint #2: Strings can be treated as arrays too.
-
+function sumThree(num){
+var str = num.toString();
+return parseInt(str[0])+parseInt(str[1])+parseInt(str[2]);
+}
 
 
 
