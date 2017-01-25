@@ -20,13 +20,26 @@ document.getElementById("q0").classList.add("status-good");
 // 1. Create a function that simply returns a string that says something funny
 //    when it is called and then displayed into the HTML page.
 
+function funny(){
+  return "lololololol"
+}
+document.getElementById("q1").innerHTML=funny();
 
 
 // 2. Define a function called "divideByTwo".
 //    It should accept one parameter within a text field called "number" and
 //    submitted when a button is clicked.
 //    The function should divide the number by two and
-//    then displayed into the HTML page.
+//    then displayed into the HTML page.``
+
+function divideByTwo(number){
+  number = number / 2;
+  document.getElementById('q2').innerHTML=number;
+}
+document.getElementById('divideByTwoButton').addEventListener("click",function () {
+ divideByTwo(document.getElementById("numberToDivide").value);
+});
+
 
 
 
