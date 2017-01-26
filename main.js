@@ -155,7 +155,10 @@ return parseInt(str[0])+parseInt(str[1])+parseInt(str[2]);
 //     The function should take each number of coins and multiply it times each coin's value.
 //     Finally, it should return the total amount of change you have in the following format: "$32.77"
 //     HINT: Understanding the toFixed method will help you with the format.
-
+function bankSort(quarters, dimes, nickels, pennies){
+  change = ((quarters * 25) + (dimes * 10) + (nickels * 5) + (pennies))/100;
+  return "$"+change.toFixed(2);
+}
 
 
 
